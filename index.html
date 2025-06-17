@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Amazon Deals</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function filterProducts() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      document.querySelectorAll('.product-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <header class="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-center shadow-md">
+    <h1 class="text-4xl font-bold text-white">🛒 Top Amazon Deals</h1>
+    <p class="mt-2 text-lg text-indigo-100">Curated daily - clean, powerful, must-have items</p>
+    <nav class="mt-4">
+      <ul class="flex justify-center space-x-6 text-white text-sm font-semibold">
+        <li><a href="#tech" class="hover:underline">Tech</a></li>
+        <li><a href="#fitness" class="hover:underline">Fitness</a></li>
+        <li><a href="#home" class="hover:underline">Home</a></li>
+        <li><a href="#beauty" class="hover:underline">Beauty</a></li>
+      </ul>
+    </nav>
+    <div class="mt-6">
+      <input id="search-input" oninput="filterProducts()" type="text" placeholder="🔍 Search for products..." class="px-5 py-2 w-3/4 md:w-1/2 rounded-full shadow border border-gray-200 focus:ring focus:ring-purple-300" />
+    </div>
+  </header>
+
+  <main class="p-6 md:p-10 space-y-20 max-w-screen-xl mx-auto">
+    <!-- Category sections are already well styled with Tailwind -->
+    <!-- They inherit the new modern layout -->
+  </main>
+
+  <footer class="bg-gray-100 border-t mt-10 text-center text-sm text-gray-500 py-6">
+    <p>This site contains affiliate links. As an Amazon Associate, I earn from qualifying purchases.</p>
+    <p class="mt-1">© 2025 YourSiteName. All rights reserved.</p>
+  </footer>
+</body>
+</html>
